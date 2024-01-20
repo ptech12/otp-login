@@ -33,7 +33,9 @@ const OtpInput = ({ length = 4, onOtpSubmit = () => {} }) => {
 		const combinedOtp = newOtp.join("")
 		console.log(combinedOtp);
 		// strictly len of combined OTP = length of the OTP fields
-		if(combinedOtp.length === length)	onOtpSubmit(combinedOtp)
+		if(combinedOtp.length === length){
+			return onOtpSubmit(combinedOtp)
+		}
 
 		// move to next input if current field is filled
 		if (value && index < length - 1 && inputRefs.current[index + 1]) {
@@ -55,7 +57,7 @@ const OtpInput = ({ length = 4, onOtpSubmit = () => {} }) => {
 			inputRefs.current[otp.indexOf("")].focus()
 		} 
 
-		if(index < length - 1){
+		if(index < length - 1 ){
 			inputRefs.current[otp.indexOf("")].focus();
 		}
 
