@@ -32,13 +32,42 @@ const OtpInput = ({ length = 4, onOtpSubmit = () => {} }) => {
 		//submit trigger
 		const combinedOtp = newOtp.join("")
 		console.log(combinedOtp);
+		// strictly len of combined OTP = length of the OTP fields
 		if(combinedOtp.length === length)	onOtpSubmit(combinedOtp)
+
+		// move to next input if current field is filled
+		if (value && index < length - 1 && inputRefs.current[index + 1]) {
+			inputRefs.current[index + 1].focus();
+		}
+
+
+
 	};
 
 
-	const handleClick = () => {};
+	const handleClick = index => {
+		// set cursor to next of the digit
+		inputRefs.current[index].setSelectionRange(1,1);
 
-	const handleKeyDown = () => {};
+		// move the previous digit
+		// if it is empty
+		if(index > 0 && !otp[index - 1]){
+			inputRefs.current[otp.indexOf("")].focus()
+		} 
+
+		if(index < length - 1){
+			inputRefs.current[otp.indexOf("")].focus();
+		}
+
+
+	};
+
+	const handleKeyDown = (index, e) => {
+		if(e.key === "Backspace" && !otp[index] && index > 0 && inputRefs.current[index - 1]){
+			inputRefs.current[index - 1].focus();
+
+		}
+	};
 
 
 
