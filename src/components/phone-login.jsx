@@ -37,16 +37,16 @@ const OTPForm = () => {
     <div>
       {!showOtpField ? (
         <>
-          <h1 className="text-6xl mb-10">Login with Phone</h1>
+          <h1 className="heading">Login with Phone</h1>
           <form onSubmit={handlPhoneSubmit}>
             <input
               type="text"
               value={phoneNumber}
               placeholder="Enter Phone Number"
               onChange={handlPhoneNumber}
-              className="border-solid"
+              className="input-box"
             />
-            <button type="submit">Submit</button>
+            <button type="submit" className="submit-btn">Submit</button>
           </form>
         </>
       ) : !otpSuccess ? (
