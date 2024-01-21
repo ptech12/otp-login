@@ -1,12 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* 
-.App{
+*, *::before, *::after{
+    background-color: #16181f;
     font-family: sans-serif;
-    text-align: center;
+
+    color: #e1e6f0;
 }
+
+.App{
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    padding: 50px;
+}
+
+
+
+
+
 
 
 .otp-input{
@@ -15,4 +27,4 @@
     margin: 5px;
     text-align: center;
     font-size: 1.2rem;
-} */
+}

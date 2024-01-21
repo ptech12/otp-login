@@ -85,7 +85,7 @@ const OtpInput = ({ length = 4, onOtpSubmit = () => {} }) => {
 				onChange={(e) => handleChange(index, e)}
 				onClick={() => handleClick(index)}
 				onKeyDown={(e) => handleKeyDown(index, e)}
-				className="w-40 h-1 m-1.5 text-xl"
+				className="otp-input"
 				/>
 
 			})

@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import OtpInput from "./otp-input";
 import Welcome from "./welcome-page";
 
+import "./styles/otp-form.css"
+
 const OTPForm = () => {
   // using SetState for phoneNumber variable
   const [phoneNumber, setPhoneNumber] = useState("");
   const [showOtpField, setShowOtpField] = useState(false);
   const [otpSuccess, setOtpSuccess] = useState(false);
+  const [code, setCode] = useState("+91")
 
   // function to handle phone number's
   const handlPhoneNumber = (e) => {
@@ -37,8 +40,16 @@ const OTPForm = () => {
     <div>
       {!showOtpField ? (
         <>
-          <h1 className="heading">Login with Phone</h1>
+          <h1 className="heading">Login or sign up to continue</h1>
           <form onSubmit={handlPhoneSubmit}>
+            <input 
+            type="text" 
+            name="code" 
+            id="code" 
+            value={code}
+            className="country-code"
+
+             />
             <input
               type="text"
               value={phoneNumber}
@@ -46,7 +57,7 @@ const OTPForm = () => {
               onChange={handlPhoneNumber}
               className="input-box"
             />
-            <button type="submit" className="submit-btn">Submit</button>
+            {/* <button type="submit" className="submit-btn">Submit</button> */}
           </form>
         </>
       ) : !otpSuccess ? (
