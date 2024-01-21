@@ -1,9 +1,9 @@
 import React from 'react'
 import OTPForm from './components/phone-login'
-import './App.css'
+
 function App() {
   return (
-    <div className='App'>
+    <div className='font-sans flex justify-center text-center items-center'>
       <OTPForm />
     
     </div>

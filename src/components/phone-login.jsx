@@ -37,13 +37,14 @@ const OTPForm = () => {
     <div>
       {!showOtpField ? (
         <>
-          <h1>Login with Phone</h1>
+          <h1 className="text-6xl mb-10">Login with Phone</h1>
           <form onSubmit={handlPhoneSubmit}>
             <input
               type="text"
               value={phoneNumber}
               placeholder="Enter Phone Number"
               onChange={handlPhoneNumber}
+              className="border-solid"
             />
             <button type="submit">Submit</button>
           </form>
