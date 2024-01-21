@@ -1,0 +1,26 @@
+
+
+.form-box{
+    border: 1px solid red;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.country-code{
+    width: 50px;
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    /* border: none; */
+}
+.input-box{
+    width: 50px;
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    /* border: none; */
+}

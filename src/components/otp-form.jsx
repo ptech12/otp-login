@@ -40,8 +40,8 @@ const OTPForm = () => {
     <div>
       {!showOtpField ? (
         <>
-          <h1 className="heading">Login or sign up to continue</h1>
-          <form onSubmit={handlPhoneSubmit}>
+          <form className="form-box" onSubmit={handlPhoneSubmit}>
+          <h4 className="heading">Login or sign up to continue</h4>
             <input 
             type="text" 
             name="code" 
