@@ -45,6 +45,10 @@
     border-radius: 10px;
     transition: width .15s linear, height .15s linear;
 }
+.spinner{
+    color: white;
+    
+}
 
 .submit-btn:hover{
     width: 305px;

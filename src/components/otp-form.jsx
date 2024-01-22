@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import OtpInput from "./otp-input";
 import Welcome from "./welcome-page";
-
+import { SyncLoader } from "react-spinners";
 import "./styles/otp-form.css"
 
 const OTPForm = () => {
@@ -11,7 +11,13 @@ const OTPForm = () => {
   const [otpSuccess, setOtpSuccess] = useState(false);
   const [code, setCode] = useState("+91")
   const [showOtpBtn, setShowOtpBtn] = useState(false)
+  const [loading, setLoading] = useState(false)
 
+  // override
+  const overide = {
+    // "border": '1px solid red',
+    "display": "block"
+  }
   // function to handle phone number's
   const handlPhoneNumber = (e) => {
     setPhoneNumber(e.target.value);
@@ -25,7 +31,7 @@ const OTPForm = () => {
   // function to handle submt
   const handlPhoneSubmit = (e) => {
     e.preventDefault();
-
+    setLoading(true)
     // phone number validation
     const regex = / ^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$ /gmi;
     if (phoneNumber.length < 10 || regex.test(phoneNumber)) {
@@ -36,9 +42,9 @@ const OTPForm = () => {
       setInterval(() => {
         setShowOtpField(true);
         
-      }, 1000);
+      }, 2000);
     }
-    
+
   };
 
   // onOtpSubmit
@@ -68,8 +74,18 @@ const OTPForm = () => {
               onChange={handlPhoneNumber}
               className="input-box"
               />
+              {/* to show the GET OTP button */}
               {showOtpBtn ? (
-              <button type="submit" className="submit-btn">Get OTP</button>
+
+                loading ? (
+                  // to show the GET OTP text
+                    <SyncLoader cssOverride={overide} color="#e1e6f0" />
+              ) : (
+                // To show the spinner
+                  <button type="submit" className="submit-btn"> 
+                    Get OTP 
+                  </button>)
+
               ) : (
                 <>
                 </>
