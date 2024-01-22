@@ -40,8 +40,8 @@ const OTPForm = () => {
     <div>
       {!showOtpField ? (
         <>
-          <form className="form-box" onSubmit={handlPhoneSubmit}>
           <h4 className="heading">Login or sign up to continue</h4>
+          <form className="form-box" onSubmit={handlPhoneSubmit}>
             <input 
             type="text" 
             name="code" 
@@ -57,7 +57,7 @@ const OTPForm = () => {
               onChange={handlPhoneNumber}
               className="input-box"
             />
-            {/* <button type="submit" className="submit-btn">Submit</button> */}
+          <button type="submit" className="submit-btn">Get OTP</button>
           </form>
         </>
       ) : !otpSuccess ? (

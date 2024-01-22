@@ -1,26 +1,40 @@
 
 
 .form-box{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin-top: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 50px 1fr;
+    height: 100px;
+    flex-wrap: wrap;
 }
 
 
 .country-code{
-    width: 50px;
+    width: 40px;
     border: 1px solid rgba(255, 255, 255, .3);
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
+    flex: 1;
+    text-align: center;
     /* border: none; */
 }
 .input-box{
-    width: 50px;
+    width: 1fr;
     border: 1px solid rgba(255, 255, 255, .3);
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
+    flex: 8;
     /* border: none; */
+}
+
+.submit-btn{
+    width: 300px;
+    height: 50px;
+    margin-top: 20px;
 }
